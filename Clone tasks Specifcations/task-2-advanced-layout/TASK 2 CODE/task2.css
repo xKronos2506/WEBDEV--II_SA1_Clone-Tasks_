@@ -1,13 +1,21 @@
 /*font import*/
-/*LATO FONT*/
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-
 /*TEKO FONT*/
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
 
+/*LATO FONT*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+* { /*default setting*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 /*font adjustments*/
-h1, h2, a {
-    font-family: "Teko", sans-serif;
+h1, a, button {
+    font-family: "Teko", serif;
     font-style: normal;
 }
 
@@ -16,131 +24,498 @@ p {
     font-style: normal;
 }
 /*default settings*/
-* {
+
+
+
+:root { /*variable settings*/
+    --small-spacing: 1rem;
+    --large-spacing-laptop: 3rem;
+    --large-spacing-tablet: 2rem;
+    --large-spacing-phone: 1rem;
+
+    --header-font-phone: 2em;
+    --header-font-tab-desk: 3em;
+    --button-font: 2em;
+    --movie-cont-font: 1.5em;
+
+    --hover-color: #eef36a;
+    --bg-color: #231651;
+    --text-color: #ffffff;
+    --text-color-2: #070410;
+    --shadow: #4dccbd;
+}
+
+body { /*backgound setting*/
+    background-color: var(--text-color-2);
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    
 }
-
 /*header and navigation bar*/
-
-.header {
-    background-color: #070410;
-}
-
-.header header {
-    box-shadow: 1rem 1rem 1rem #eef36a;
-}
-.header h1, li, a {
-    text-decoration: none;
-    color: #FFFFFF;
-    font-size: 3rem;
-}
-
-.header header {
+header {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 3rem;
+    flex-wrap: nowrap;
+    
+    background-color: var(--bg-color);      
+    padding: auto var(--large-spacing-laptop);
 }
 
-nav ul {
-    list-style-type: none;
+.title { /*title css for the watch.it element*/
+    color: var(--text-color);
+    /*sets font*/
+    font-family: "Teko", serif;
+    font-weight: 300;
+    font-size: 2em;
+
+    margin: var(--small-spacing);
 }
 
-nav ul li {
-    display: inline-block;
-    padding: 1rem 3rem;
+
+/*navbar*/
+
+
+.navbar { /*sets font for the navbar*/
+    font-family: "Teko", serif;
+    font-weight: 500;
+    overflow: hidden;
 }
 
-nav ul li a {
+.navbar nav ul{ /*removes the bullet points and sets default display to flex*/
+    list-style: none;
+    display: flex;
+}
+
+.navbar nav ul li { /*adjusts its spacing with each other*/
+    padding: 10px 20px;
+}
+
+.navbar nav ul li a { /*sets it to plain text, adjusts text color, font and adds transition for hover*/
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 2em;
     transition: 0.3s ease-in-out;
 }
 
-nav ul li a:hover {
-    color: #eef36a;
+nav ul li a:hover { /*sets hover color*/
+    color: var(--hover-color);
 }
 
-/*header button*/
 
-.header .button-right button {
-    padding: 1rem 1rem;
-    border-radius: 1rem;
-    cursor: pointer;
-    background-color: #FFFFFF;
+/*button right*/
+
+.button-right { /*sets padding and hover cursor to pointer*/
+    padding: var(--small-spacing);
+    cursor: pointer;    
 }
 
-.header button:hover {
-    color: #eef36a;
+.button-right button { /*sets the border radius and its internal spacing*/
+    border-radius: var(--small-spacing);
+    padding: var(--small-spacing) var(--large-spacing-laptop);
+
 }
-.header a button{
+
+.button-right a button { /*adjusts font size and design function*/
     font-family: "Teko", sans-serif;
     font-weight: 500;
-    font-size: 2em;
-    font-style: normal;
+    font-size: 3em;
+
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
 }
+
+.button-right button:hover { /*sets hover color*/
+    background-color: var(--hover-color);
+}
+
 
 /*movie posters*/
 
-.main-container{
+main { /*main container adjustment */
     display: flex;
+    flex-direction: column;    
+    align-items: center;    
     justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
-    background-color: #231651;
-    margin: 1rem auto;
-}
-
-.main-container main {
     max-width: 900px;
-    margin: 3rem;
-    padding: 3rem;
-
+    margin: 0 auto;
+    gap: var(--large-spacing-laptop);
 }
-/*MAIN CSS*/
 
-main {
-    font-size: 1.5em;
+
+main .main-poster-cont { /*sub container adjustments*/
+    display: flex; 
+    flex-direction: column;
+    gap: var(--small-spacing) auto; 
+    width: 100%;
+}
+
+main button { /*sets borders for the following buttons under to be none*/
+    border: none;
 }
 
 /*first poster*/
 
-.poster-top {
-    border: 2px solid white;
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    max-width: 60rem;
-    margin: 0 auto;
-}
-
-/*poster image*/
-
-
-.image-top img{
-    width: 100%;
-    max-width: 50rem;   
-    max-height: 30rem;
-}
-
-/*poster text*/
-.bottom {
+.poster-one { /*sets its maximum width, appropriate measurements*/
+    background-color: var(--bg-color);
+    box-shadow: 1rem 1rem 0.5rem var(--shadow);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    max-width: 100%;
+    max-width: 60rem;
+    margin: var(--large-spacing-laptop) auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
 }
 
-.text-bottom-left {
+.one-img { /*sets the img container to its specification*/
+    width: 100%;
+    max-height: 30rem;
+    overflow: hidden;
+}
+
+.one-img img{ /*sets the image width and height*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.one-bot { /*adjusts the text and button container to align*/
+    display: flex;
+    flex-direction: row;
+    padding: var(--small-spacing) auto;
+}
+
+.one-text { /*adjustments for the text*/
+    font-family: "Lato", sans-serif;
+    color: var(--text-color);
+    font-style: normal;
+    font-size: var(--movie-cont-font);
     text-align: left;
-    padding: 1rem;
-    flex-grow: 1;
 }
 
-/*button */
-.button-right button {
-    padding: 10rem 3rem;
-    border-radius: 1rem;
+.one-button { /*adjustments for the button to its appropriate measurement*/
+    text-align: center;
+    padding: var(--small-spacing);
+    margin: 0.5rem;
+    box-sizing: border-box;
+}
+
+.one-button a button { /*adjustment for the buttons design and font*/
+    border-radius: 0.5rem;
+    padding: auto;
+    width: 15rem;
+    height: 8rem;
+
+    font-family: "Teko", sans-serif;
+    font-weight: 500;
+    font-size: 3em;
+
     cursor: pointer;
-    background-color: #FFFFFF;
+    transition: 0.3s ease-in-out;
+}
+
+.one-button button:hover {
+   background-color: var(--hover-color);
+}
+
+/*second and third poster*/
+
+.poster-column { /*sets the poster column container for the second and third poster*/
+        display: flex;
+        flex-direction: row;
+        max-height: 100rem;
+        justify-content: space-between;
+}
+
+.poster-two, .poster-three { /*sets its maximum width, appropriate measurements*/
+    box-shadow: 1rem 1rem 0.5rem var(--shadow);
+    background-color: var(--bg-color);
+
+    display: flex;
+    flex-direction: column;
+    max-width: 48%;
+}
+
+.two-img .three-img { /*sets the img container to its specification*/
+    width: 100%;
+    max-height: 50rem;
+}
+
+.two-img img, .three-img img { /*sets the image width and height*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*bottom text and button css*/
+.two-bot, .three-bot {  /*adjusts the text and button container to align*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--small-spacing);
+    height: 50%;
+}
+
+.two-bot .two-text, .three-bot .three-text { /*adjustments for the text*/
+    padding: auto;
+    text-align: left;
+}
+
+.two-text, .three-text {
+    color: var(--text-color);
+    font-family: "Lato", sans-serif;
+    font-size: var(--movie-cont-font);
+}
+
+/*button css*/
+
+.two-button, .three-button {  /*adjusts font size and design function*/
+    text-align: center;
+    padding: var(--small-spacing);
+    box-sizing: border-box;
+    font-family: "Teko", sans-serif;
+}
+
+.two-button a button,.three-button a button { /*adjustments for the button to its appropriate measurement*/
+    border-radius: 0.5rem;
+    padding: var(--small-spacing);
+    width: 100%;
+    height: auto;
+    font-family: "Teko", sans-serif;
+
+    font-weight: 500;
+    font-size: 3em;
+
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+
+
+.two-button button:hover, .three-button button:hover{
+    background-color: var(--hover-color);
+}
+
+/*third poster area*/
+
+.poster-four, .poster-five, .poster-six { /*sets its maximum width, appropriate measurements*/
+    /*design specification*/
+    background-color: var(--bg-color);
+    box-shadow: 1rem 1rem 0.5rem var(--shadow);
+    display: flex;
+    flex-direction: row;
+    max-width: 60rem;
+    margin: var(--large-spacing-laptop) auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.four-img, .five-img, .six-img { /*sets the img container to its specification*/
+    flex: 0 0 50%;
+    overflow: hidden;
+}
+
+.four-img img, .five-img img, .six-img img { /*sets the image width and height*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.four-bot, .five-bot, .six-bot {  /*adjusts the text and button container to align*/
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--small-spacing);
+
+}
+
+.four-text, .five-text, .six-text { /*adjustments for the text*/
+    font-family: "Lato", sans-serif;
+    color: var(--text-color);
+    word-spacing: 0.2rem;
+
+}
+
+.four-text , .five-text ,.six-text { /*adjustments for the text*/
+    font-style: normal;
+    font-size: var(--movie-cont-font);
+    margin-bottom: var(--small-spacing);
+    text-align: left;
+}
+
+.four-button, .five-button, .six-button { /*adjustments for the button to its appropriate measurement*/
+    text-align: left;
+    padding: var(--small-spacing);
+    box-sizing: border-box;
+
+    font-family: "Teko", sans-serif;
+}
+
+.four-button a button, .five-button a button, .six-button a button { /*adjusts font size and design function*/
+    border-radius: 0.5rem; 
+    padding: var(--small-spacing);
+    width: 100%;
+    height: auto;
+    font-family: "Teko", sans-serif;
+
+    font-weight: 500;
+    font-size: 3em;
+
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.four-button button:hover, .five-button button:hover, 
+.six-button button:hover {
+    background-color: var(--hover-color);
+}
+
+
+/*MEDIA QUERY*/
+
+/* */
+@media screen and (max-width: 720px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        
+        background-color: var(--bg-color);      
+        padding: auto var(--large-spacing-tablet);
+    }
+    
+    .title { /*title css for the watch.it element*/
+        color: var(--text-color);
+        /*sets font*/
+        font-family: "Teko", serif;
+        font-weight: 300;
+        font-size: 1.5em;
+    
+        margin: var(--small-spacing);
+    }
+    
+    
+    /*navbar*/
+    
+    
+    .navbar { /*sets font for the navbar*/
+        font-family: "Teko", serif;
+        font-weight: 500;
+        overflow: hidden;
+    }
+    
+    .navbar nav ul{ /*removes the bullet points and sets default display to flex*/
+        list-style: none;
+        display: flex;
+    }
+    
+    .navbar nav ul li { /*adjusts its spacing with each other*/
+        padding: 10px 25px;
+    }
+    
+    .navbar nav ul li a { /*sets it to plain text, adjusts text color, font and adds transition for hover*/
+        text-decoration: none;
+        color: var(--text-color);
+        font-size: 2em;
+        transition: 0.3s ease-in-out;
+    }
+    
+    nav ul li a:hover { /*sets hover color*/
+        color: var(--hover-color);
+    }
+    
+    
+    /*button right*/
+    
+    .button-right { /*sets padding and hover cursor to pointer*/
+        padding: var(--small-spacing);
+        cursor: pointer;    
+    }
+    
+    .button-right button { /*sets the border radius and its internal spacing*/
+        border-radius: var(--small-spacing);
+        padding: var(--small-spacing) var(--large-spacing-tablet);
+    
+    }
+    
+    .button-right a button { /*adjusts font size and design function*/
+        font-family: "Teko", sans-serif;
+        font-weight: 500;
+        font-size: 1.5em;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+    }
+    /**/
+    main {
+        display: block;
+        width: 100%;
+    }
+
+    .main-poster-cont {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+    }
+
+
+    .poster-one {
+        display: flex;
+        flex-direction: column;
+        max-width: 50%;   
+        grid-column: 1;
+    }
+
+    .poster-two {    
+        width: 100%;
+        grid-column: 2;
+    }
+    .poster-three {
+        width: 100%;
+        grid-column: 3;
+    }
+
+    .poster-five {
+        width: 100%;
+        grid-column: 5;
+    }
+    .poster-four, .poster-five, .poster-six {
+        display: flex;
+        flex-direction: column;
+        max-width: 50%;
+    }
+    .one-bot {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem auto;
+    }
+
+    .one-button {
+        width: inherit;
+    }
+
+    .poster-column {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .navbar {
+        display: none;
+    }
+
+    .poster-one, .poster-two, .poster-three, .poster-four, .poster-five, .poster-six {
+        width: 100%;
+    }
+
+    .poster-column {
+        display: flex;
+        flex-direction: column;
+    }
 }
