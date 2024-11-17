@@ -464,7 +464,6 @@ main button { /*sets borders for the following buttons under to be none*/
         grid-template-rows: repeat(3, auto);
     }
 
-
     .poster-one {
         display: flex;
         flex-direction: column;
@@ -501,21 +500,107 @@ main button { /*sets borders for the following buttons under to be none*/
     }
 
     .poster-column {
-        display: block;
+        width: 100%; 
+        height: 50%;
+        margin-bottom: 2rem; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 3rem;
+    }
+
+    .poster-column img {
+        width: 100%; 
+        height: auto; 
+        object-fit: cover; 
+        max-height: 100rem; 
     }
 }
 
 @media screen and (max-width: 360px) {
+
+    .header {
+        padding: var(--small-spacing);
+    }
     .navbar {
         display: none;
     }
 
-    .poster-one, .poster-two, .poster-three, .poster-four, .poster-five, .poster-six {
+    main {
+        display: block;
         width: 100%;
     }
 
-    .poster-column {
+    .main-poster-cont {
+        
+    }
+
+    .poster-one {
         display: flex;
         flex-direction: column;
+        max-width: 100%;   
+    }
+
+    .poster-two {    
+        max-width: 150%;
+    }
+    .poster-three {
+        max-width: 100%;
+    }
+
+    .poster-four {
+        max-width: 100%;
+    }
+
+    .poster-five {
+        max-width: 100%;
+    }
+
+    .poster-six {
+        max-width: 100%;
+    }
+
+    .one-bot {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem auto;
+    }
+
+    .one-button {
+        width: inherit;
+    }
+
+    .poster-column {
+        width: 100%; 
+        height: 50%;
+        margin-bottom: 1rem; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 3rem;
+    }
+
+    .poster-column img {
+        width: 100%; 
+        height: auto; 
+        object-fit: cover; 
+        max-height: 100rem; 
+    }
+
+    .one-text, .two-text, .three-text, .four-text, .five-text, .six-text {
+        font-size: 1em;
+    }
+
+    .one-button, .two-button, .three-button, .four-button, .five-button, .six-button {
+        text-align: center;
+        font-size: 0.5em;
+    }
+
+    .one-button a button, .two-button a button, .three-button a button, .four-button a button, .five-button a button, .six-button a button { 
+        padding: 0.5rem auto;
+        width: 100%;
+        font-family: "Teko", sans-serif;
     }
 }
