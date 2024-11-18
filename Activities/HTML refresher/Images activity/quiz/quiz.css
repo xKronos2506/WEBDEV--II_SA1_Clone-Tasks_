@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.question-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.answer-container {
+    display: flex;
+    flex-direction: row;
+}

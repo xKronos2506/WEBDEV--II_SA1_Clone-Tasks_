@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 images per row */
+    gap: 10px;
+    width: 90%;
+    max-width: 900px;
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    cursor: pointer;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.2);
+    z-index: 1;
+  }
+  
+  /* When hovering, adjust the position of adjacent images */
+  .gallery img:nth-child(1):hover ~ img:nth-child(2),
+  .gallery img:nth-child(2):hover ~ img:nth-child(3),
+  .gallery img:nth-child(3):hover ~ img:nth-child(4),
+  .gallery img:nth-child(5):hover ~ img:nth-child(6),
+  .gallery img:nth-child(6):hover ~ img:nth-child(7),
+  .gallery img:nth-child(7):hover ~ img:nth-child(8),
+  .gallery img:nth-child(9):hover ~ img:nth-child(10),
+  .gallery img:nth-child(10):hover ~ img:nth-child(11),
+  .gallery img:nth-child(11):hover ~ img:nth-child(12) {
+    /* Move the next image to the right when the current one is hovered */
+    transform: translateX(15px);
+  }
+  
+  .gallery img:nth-child(2):hover ~ img:nth-child(1),
+  .gallery img:nth-child(3):hover ~ img:nth-child(2),
+  .gallery img:nth-child(4):hover ~ img:nth-child(3),
+  .gallery img:nth-child(5):hover ~ img:nth-child(4),
+  .gallery img:nth-child(6):hover ~ img:nth-child(5),
+  .gallery img:nth-child(7):hover ~ img:nth-child(6),
+  .gallery img:nth-child(8):hover ~ img:nth-child(7),
+  .gallery img:nth-child(9):hover ~ img:nth-child(8),
+  .gallery img:nth-child(10):hover ~ img:nth-child(9),
+  .gallery img:nth-child(11):hover ~ img:nth-child(10),
+  .gallery img:nth-child(12):hover ~ img:nth-child(11) {
+    /* Move the previous image to the left and scale it up */
+    transform: translateX(-15px) scale(1.1);
+  }
+  
+  .gallery img:nth-child(1):hover ~ img:nth-child(5),
+  .gallery img:nth-child(2):hover ~ img:nth-child(6),
+  .gallery img:nth-child(3):hover ~ img:nth-child(7),
+  .gallery img:nth-child(4):hover ~ img:nth-child(8),
+  .gallery img:nth-child(5):hover ~ img:nth-child(9) {
+    /* Move distant images down by 15px when the first or second image is hovered */
+    transform: translateY(15px);
+  }
+
+  

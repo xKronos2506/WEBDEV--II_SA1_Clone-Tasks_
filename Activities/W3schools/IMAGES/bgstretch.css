@@ -1,0 +1,13 @@
+body {
+    background-image: url('yeezus.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}

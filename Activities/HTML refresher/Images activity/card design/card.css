@@ -1,0 +1,96 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+.questrial-regular {
+    font-family: "Questrial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* body */
+body {
+    margin: 0;
+    background-color: #f58b57;
+}
+
+/* title */
+.title {
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    font-size: 30px;
+}
+
+/* container and column layout */
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #a75f3b;
+    margin: 20px 200px;
+    padding: 20px;
+    border-radius: 10px; /* added for aesthetics */
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    padding: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: #ffffff; /* better readability against dark background */
+}
+
+.text h2 {
+    text-transform: uppercase;
+    margin-bottom: 10px; /* added spacing */
+}
+
+.text p {
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.6; /* improved readability */
+}
+
+/* image styles */
+img {
+    width: 75%;
+    height: auto;
+    border-radius: 10px; /* added for aesthetics */
+}
+
+/* button styles */
+.button {
+    margin-top: 20px;
+}
+
+.button button {
+    border: none;
+    padding: 10px 15px;
+    background-color: #e6dfcc;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer; /* cursor change on hover */
+    transition: transform 0.3 ease;
+}
+
+.button button:hover {
+    background-color: #d4c5a1; /* hover effect */
+    transform: scale(1.2);
+}
+
+/*media query*/
+

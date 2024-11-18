@@ -63,10 +63,10 @@ p, footer { /*font adjustments*/
 
 /*main*/
 main { /*adjusts the overall container with its width, bg color and its appropriate margin size*/
-    max-width: 85rem;
-    width: 70%;
+    max-width: 90rem;
+    width: 80%;
     background-color: white;
-    margin: 3rem auto;
+    margin: 3rem auto; 
     border: 2px solid black;
     position: relative;
 }
@@ -99,7 +99,7 @@ main article p {
 .section-container { /*adjusts the section container to be in a column, with the paragraph texts overlapping on each column*/
     column-count: 3;
     gap: 5px;
-    margin: 3rem 2rem;
+    margin: 1rem 2rem;
     word-spacing: 0.2rem;
 }
 
@@ -117,7 +117,7 @@ main article p {
 .images { /*sets variable for its measurements*/
     --gap: 0.1rem;
     --num-cols: 4;
-    --row-height: 10rem;
+    --row-height: 15rem;
 
     /*sets its box sizing according to the borderline*/
     box-sizing: border-box;
@@ -210,12 +210,12 @@ main article p {
 
     /*main*/
     main {
-        width: 75%;
+        width: 100%;
         margin: 3.5rem auto;
     }
 
     main article {
-        width: 85%;
+        width: 90%;
         text-align: center;
     }
 
@@ -228,13 +228,27 @@ main article p {
     }
 
     .section-container {
+        columns: 1;
         flex-direction: column;
         margin: 0.25rem 1rem;
+        text-align: center;
     }
 
     .images {
         --num-cols: 2;
         --row-height: 14rem;
+
+        grid-template-columns: repeat(var(--num-cols), 1fr);
+        grid-auto-rows: var(--row-height);
+        gap: var(--gap);
+    }
+
+    .images-col-2 {
+        grid-column: span 1;
+    }
+
+    .images-row-2 {
+        grid-row: span 1;
     }
 
     .hide {
