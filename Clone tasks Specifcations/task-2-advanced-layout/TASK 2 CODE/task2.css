@@ -188,6 +188,8 @@ main { /*main container adjustment*/
     border-radius: var(--small-spacing);
     cursor: pointer;
     font-size: 3em;
+
+    transition: 0.3s ease-in-out;
 }
 
 .poster-cont-main button:hover { /*hover adjustment*/

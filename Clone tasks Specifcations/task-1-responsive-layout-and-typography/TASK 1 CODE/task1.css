@@ -48,13 +48,13 @@ nav ul li a { /*adjusts the individual color text and changing its text decorati
 }
 
 /*font text */
-h1, h2 { /*font adjustments*/ 
+h1, h2 { /*font adjustments*/
     font-family: "Protest Guerrilla", serif;
     font-weight: 400;
     font-style: normal;
 }
 
-p, footer { /*font adjustments*/ 
+p, footer { /*font adjustments*/
     font-family: "Josefin Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
