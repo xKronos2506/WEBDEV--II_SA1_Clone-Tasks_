@@ -122,8 +122,6 @@ header button a { /*button text adjustment*/
 
     padding: var(--large-spacing-laptop);
     box-sizing: border-box;
-
-
 }
 
 header button:hover { /*button adjustment*/
@@ -153,7 +151,7 @@ main { /*main container adjustment*/
 .poster-cont-main {
     /*design specification*/
     background-color: var(--bg-color);
-    box-shadow: 1rem 1rem 0.5rem var(--shadow);
+    box-shadow: 1rem 1rem 0.5rem var(--shadow); 
     /*display specification*/
     overflow: hidden;
     display: flex;
@@ -236,7 +234,6 @@ main { /*main container adjustment*/
     text-align: left;
 }
 
-/*second and third poster extra adjustment*/
 
 
 /*final three posters*/
@@ -273,8 +270,8 @@ main { /*main container adjustment*/
     }
 
     nav {
-        padding: 0.5rem 1px;
-        font-size: 1.5em;
+        padding: 0.5rem;
+        font-size: 1em;
     }
 
     /*main*/
@@ -366,7 +363,6 @@ main { /*main container adjustment*/
     main { /*grid display for all containers to be lined in a column*/
         display: grid;  
         grid-template-columns: 1fr;
-
         grid-template-areas:
 
         "poster1"
