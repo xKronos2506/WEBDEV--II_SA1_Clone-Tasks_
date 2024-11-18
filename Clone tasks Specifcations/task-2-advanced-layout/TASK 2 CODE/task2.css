@@ -53,46 +53,46 @@ body { /*backgound setting*/
 }
 /*header and navigation bar*/
 header {
+    box-sizing: border-box;
+    width: 100%;
+    padding: var(--small-spacing);
+
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap;
     
     background-color: var(--bg-color);      
-    padding: auto var(--large-spacing-laptop);
+    color: var(--text-color);
+    box-shadow: 0.1rem var(--small-spacing) 0.5rem var(--shadow);
 }
 
-.title { /*title css for the watch.it element*/
+header .title { /*title css for the watch.it element*/
     color: var(--text-color);
     /*sets font*/
     font-family: "Teko", serif;
-    font-weight: 300;
-    font-size: 2em;
-
-    margin: var(--small-spacing);
+    font-size: var(--header-font-tab-desk);
 }
 
 
 /*navbar*/
 
 
-.navbar { /*sets font for the navbar*/
+nav { /*sets font for the navbar*/
     font-family: "Teko", serif;
     font-weight: 500;
     overflow: hidden;
 }
 
-.navbar nav ul{ /*removes the bullet points and sets default display to flex*/
+nav ul{ /*removes bullet points and set display to flex*/
     list-style: none;
     display: flex;
 }
 
-.navbar nav ul li { /*adjusts its spacing with each other*/
-    padding: 10px 20px;
+nav li { /*adjusts spacing*/
+    padding: var(--small-spacing);
 }
 
-.navbar nav ul li a { /*sets it to plain text, adjusts text color, font and adds transition for hover*/
+nav ul li a { /*navbar text adjustment*/
     text-decoration: none;
     color: var(--text-color);
     font-size: 2em;
@@ -106,501 +106,325 @@ nav ul li a:hover { /*sets hover color*/
 
 /*button right*/
 
-.button-right { /*sets padding and hover cursor to pointer*/
-    padding: var(--small-spacing);
-    cursor: pointer;    
-}
-
-.button-right button { /*sets the border radius and its internal spacing*/
-    border-radius: var(--small-spacing);
-    padding: var(--small-spacing) var(--large-spacing-laptop);
-
-}
-
-.button-right a button { /*adjusts font size and design function*/
-    font-family: "Teko", sans-serif;
-    font-weight: 500;
-    font-size: 3em;
-
-    cursor: pointer;
+header button { /*main button adjustment*/
+    font-size: var(--header-font-tab-desk);
+    font-family: "Teko", serif;
     transition: 0.3s ease-in-out;
-}
 
-.button-right button:hover { /*sets hover color*/
-    background-color: var(--hover-color);
-}
-
-
-/*movie posters*/
-
-main { /*main container adjustment */
-    display: flex;
-    flex-direction: column;    
-    align-items: center;    
-    justify-content: center;
-    max-width: 900px;
-    margin: 0 auto;
-    gap: var(--large-spacing-laptop);
-}
-
-
-main .main-poster-cont { /*sub container adjustments*/
-    display: flex; 
-    flex-direction: column;
-    gap: var(--small-spacing) auto; 
-    width: 100%;
-}
-
-main button { /*sets borders for the following buttons under to be none*/
     border: none;
+    border-radius: var(--small-spacing);
+    height: fit-content;
 }
 
-/*first poster*/
+header button a { /*button text adjustment*/
+    color: var(--text-color-2);
+    text-decoration: none;
 
-.poster-one { /*sets its maximum width, appropriate measurements*/
-    background-color: var(--bg-color);
-    box-shadow: 1rem 1rem 0.5rem var(--shadow);
-    display: flex;
-    flex-direction: row;
-    max-width: 60rem;
-    margin: var(--large-spacing-laptop) auto;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-
-}
-
-.one-img { /*sets the img container to its specification*/
-    width: 100%;
-    max-height: 30rem;
-    overflow: hidden;
-}
-
-.one-img img{ /*sets the image width and height*/
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.one-bot { /*adjusts the text and button container to align*/
-    display: flex;
-    flex-direction: row;
-    padding: var(--small-spacing) auto;
-}
-
-.one-text { /*adjustments for the text*/
-    font-family: "Lato", sans-serif;
-    color: var(--text-color);
-    font-style: normal;
-    font-size: var(--movie-cont-font);
-    text-align: left;
-}
-
-.one-button { /*adjustments for the button to its appropriate measurement*/
-    text-align: center;
-    padding: var(--small-spacing);
-    margin: 0.5rem;
+    padding: var(--large-spacing-laptop);
     box-sizing: border-box;
+
+
 }
 
-.one-button a button { /*adjustment for the buttons design and font*/
-    border-radius: 0.5rem;
-    padding: auto;
-    width: 15rem;
-    height: 8rem;
-
-    font-family: "Teko", sans-serif;
-    font-weight: 500;
-    font-size: 3em;
-
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-}
-
-.one-button button:hover {
-   background-color: var(--hover-color);
-}
-
-/*second and third poster*/
-
-.poster-column { /*sets the poster column container for the second and third poster*/
-        display: flex;
-        flex-direction: row;
-        max-height: 100rem;
-        justify-content: space-between;
-}
-
-.poster-two, .poster-three { /*sets its maximum width, appropriate measurements*/
-    box-shadow: 1rem 1rem 0.5rem var(--shadow);
-    background-color: var(--bg-color);
-
-    display: flex;
-    flex-direction: column;
-    max-width: 48%;
-}
-
-.two-img .three-img { /*sets the img container to its specification*/
-    width: 100%;
-    max-height: 50rem;
-}
-
-.two-img img, .three-img img { /*sets the image width and height*/
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/*bottom text and button css*/
-.two-bot, .three-bot {  /*adjusts the text and button container to align*/
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: var(--small-spacing);
-    height: 50%;
-}
-
-.two-bot .two-text, .three-bot .three-text { /*adjustments for the text*/
-    padding: auto;
-    text-align: left;
-}
-
-.two-text, .three-text {
-    color: var(--text-color);
-    font-family: "Lato", sans-serif;
-    font-size: var(--movie-cont-font);
-}
-
-/*button css*/
-
-.two-button, .three-button {  /*adjusts font size and design function*/
-    text-align: center;
-    padding: var(--small-spacing);
-    box-sizing: border-box;
-    font-family: "Teko", sans-serif;
-}
-
-.two-button a button,.three-button a button { /*adjustments for the button to its appropriate measurement*/
-    border-radius: 0.5rem;
-    padding: var(--small-spacing);
-    width: 100%;
-    height: auto;
-    font-family: "Teko", sans-serif;
-
-    font-weight: 500;
-    font-size: 3em;
-
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-}
-
-
-
-.two-button button:hover, .three-button button:hover{
+header button:hover { /*button adjustment*/
     background-color: var(--hover-color);
 }
 
-/*third poster area*/
 
-.poster-four, .poster-five, .poster-six { /*sets its maximum width, appropriate measurements*/
+
+/*movie posters main*/
+
+main { /*main container adjustment*/
+    /*measurement adjustment*/
+    max-width: 900px;
+    margin: var(--large-spacing-laptop) auto;
+    gap: 1.5rem;
+    /*grid adjustment*/
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        "poster1 poster1"
+        "poster2 poster3"
+        "poster4 poster4"
+        "poster5 poster5"
+        "poster6 poster6";
+}
+
+.poster-cont-main {
     /*design specification*/
     background-color: var(--bg-color);
     box-shadow: 1rem 1rem 0.5rem var(--shadow);
-    display: flex;
-    flex-direction: row;
-    max-width: 60rem;
-    margin: var(--large-spacing-laptop) auto;
+    /*display specification*/
     overflow: hidden;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    text-align: left;
+    justify-content: space-between;
+    /*measurement specification*/
+    margin: var(--small-spacing);
 }
 
-.four-img, .five-img, .six-img { /*sets the img container to its specification*/
-    flex: 0 0 50%;
-    overflow: hidden;
-}
-
-.four-img img, .five-img img, .six-img img { /*sets the image width and height*/
+.poster-cont-main img { /*images adjustment for all containers*/
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
 }
 
-.four-bot, .five-bot, .six-bot {  /*adjusts the text and button container to align*/
-    flex: 1;
+.poster-cont-main div { /*padding adjustment for all containers*/
+    padding: var(--small-spacing);
+}
+
+.poster-cont-main p { /*movie text adjustment*/
+    color: var(--text-color);
+    font-family: "Lato", serif;   
+    font-size: var(--movie-cont-font); 
+}
+
+.poster-cont-main button { /*button adjustment*/
+    padding: var(--small-spacing);
+    width: 100%;
+    background-color: var(--text-color);
+    border: none;
+    border-radius: var(--small-spacing);
+    cursor: pointer;
+    font-size: 3em;
+}
+
+.poster-cont-main button:hover { /*hover adjustment*/
+    background-color: var(--hover-color);
+}
+
+.poster-cont-main button a { /*button text adjustment*/
+    text-decoration: none;
+    color: var(--text-color-2);
+}
+
+/*poster grid assign*/
+.poster-one { 
+    grid-area: poster1; 
+}
+.poster-two { 
+    grid-area: poster2; 
+}
+.poster-three { 
+    grid-area: poster3; 
+}
+.poster-four { 
+    grid-area: poster4; 
+}
+.poster-five { 
+    grid-area: poster5; 
+}
+.poster-six { 
+    grid-area: poster6; 
+}
+
+/*first poster extra adjustment*/
+
+.poster-one { /*first poster display adjustment*/
+    display: flex;
+    flex-direction: column;
+}
+.poster-one img { /*first poster image adjustment*/
+    height: 25rem;
+}
+.poster-one .bot { /*text and button adjustment*/
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+/*second and third poster extra adjustment*/
+
+
+/*final three posters*/
+
+.poster-four, .poster-five, .poster-six { /*poster display adjustment*/
+    display: flex;
+    flex-direction: row;
+}
+
+.poster-four img, .poster-five img, .poster-six img { /*poster image adjustment*/
+    width: 45%;
+}
+
+.poster-four .bot, .poster-five .bot, .poster-six .bot { /*text and button poster adjustment for display and measurement*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: var(--small-spacing);
 
+    text-align: left;   
 }
-
-.four-text, .five-text, .six-text { /*adjustments for the text*/
-    font-family: "Lato", sans-serif;
-    color: var(--text-color);
-    word-spacing: 0.2rem;
-
-}
-
-.four-text , .five-text ,.six-text { /*adjustments for the text*/
-    font-style: normal;
-    font-size: var(--movie-cont-font);
-    margin-bottom: var(--small-spacing);
-    text-align: left;
-}
-
-.four-button, .five-button, .six-button { /*adjustments for the button to its appropriate measurement*/
-    text-align: left;
-    padding: var(--small-spacing);
-    box-sizing: border-box;
-
-    font-family: "Teko", sans-serif;
-}
-
-.four-button a button, .five-button a button, .six-button a button { /*adjusts font size and design function*/
-    border-radius: 0.5rem; 
-    padding: var(--small-spacing);
-    width: 100%;
-    height: auto;
-    font-family: "Teko", sans-serif;
-
-    font-weight: 500;
-    font-size: 3em;
-
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-}
-
-.four-button button:hover, .five-button button:hover, 
-.six-button button:hover {
-    background-color: var(--hover-color);
-}
-
 
 /*MEDIA QUERY*/
 
-/* */
+/*tablet query*/
 @media screen and (max-width: 720px) {
+    /*header*/
     header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: nowrap;
-        
-        background-color: var(--bg-color);      
-        padding: auto var(--large-spacing-tablet);
-    }
-    
-    .title { /*title css for the watch.it element*/
-        color: var(--text-color);
-        /*sets font*/
-        font-family: "Teko", serif;
-        font-weight: 300;
-        font-size: 1.5em;
-    
-        margin: var(--small-spacing);
-    }
-    
-    
-    /*navbar*/
-    
-    
-    .navbar { /*sets font for the navbar*/
-        font-family: "Teko", serif;
-        font-weight: 500;
-        overflow: hidden;
-    }
-    
-    .navbar nav ul{ /*removes the bullet points and sets default display to flex*/
-        list-style: none;
-        display: flex;
-    }
-    
-    .navbar nav ul li { /*adjusts its spacing with each other*/
-        padding: 10px 25px;
-    }
-    
-    .navbar nav ul li a { /*sets it to plain text, adjusts text color, font and adds transition for hover*/
-        text-decoration: none;
-        color: var(--text-color);
-        font-size: 2em;
-        transition: 0.3s ease-in-out;
-    }
-    
-    nav ul li a:hover { /*sets hover color*/
-        color: var(--hover-color);
-    }
-    
-    
-    /*button right*/
-    
-    .button-right { /*sets padding and hover cursor to pointer*/
-        padding: var(--small-spacing);
-        cursor: pointer;    
-    }
-    
-    .button-right button { /*sets the border radius and its internal spacing*/
-        border-radius: var(--small-spacing);
-        padding: var(--small-spacing) var(--large-spacing-tablet);
-    
-    }
-    
-    .button-right a button { /*adjusts font size and design function*/
-        font-family: "Teko", sans-serif;
-        font-weight: 500;
-        font-size: 1.5em;
-        cursor: pointer;
-        transition: 0.3s ease-in-out;
-    }
-    /**/
-    main {
-        display: block;
-        width: 100%;
+        font-size: 0.6em;
     }
 
-    .main-poster-cont {
+    header button {
+        border-radius: 0.5rem;
+    }
+
+    nav {
+        padding: 0.5rem 1px;
+        font-size: 1.5em;
+    }
+
+    /*main*/
+
+    main { /*sets overall grid to have 2 columns and 3 rows*/
+        margin: var(--large-spacing-tablet) auto;
         display: grid;
+        gap: var(--small-spacing);   
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, auto);
+        grid-template-rows: repeat(3, 1fr);
+
+        grid-template-areas:
+        "poster1 poster2"
+        "poster3 poster4"
+        "poster5 poster6";
     }
 
-    .poster-one {
-        display: flex;
-        flex-direction: column;
-        max-width: 50%;   
-        grid-column: 1;
-    }
+    .poster-cont-main { /*main poster container adjustment to apply each poster*/
+        box-shadow: 0.5rem 0.5rem 0.5rem var(--shadow);
 
-    .poster-two {    
-        width: 100%;
-        grid-column: 2;
-    }
-    .poster-three {
-        width: 100%;
-        grid-column: 3;
-    }
-
-    .poster-five {
-        width: 100%;
-        grid-column: 5;
-    }
-    .poster-four, .poster-five, .poster-six {
-        display: flex;
-        flex-direction: column;
-        max-width: 50%;
-    }
-    .one-bot {
-        display: flex;
-        flex-direction: column;
-        padding: 2rem auto;
-    }
-
-    .one-button {
-        width: inherit;
-    }
-
-    .poster-column {
-        width: 100%; 
-        height: 50%;
-        margin-bottom: 2rem; 
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        gap: 3rem;
+        height: 100%;
     }
 
-    .poster-column img {
-        width: 100%; 
-        height: auto; 
-        object-fit: cover; 
-        max-height: 100rem; 
+    .poster-cont-main img { /*overall container image adjustment*/
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .poster-cont-main div { /*overall div adjustment for each column*/
+        padding: var(--small-spacing);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1;
+    }
+
+    .poster-cont-main p { /*poster text adjustment for all containers*/
+        text-align: left;
+        font-size: var(--movie-cont-font);
+    }
+
+    /*individual poster container grid application*/
+    .poster-one { 
+        grid-area: poster1; 
+    }
+    .poster-two { 
+        grid-area: poster2; 
+    }
+    .poster-three { 
+        grid-area: poster3; 
+    }
+    .poster-four { 
+        grid-area: poster4; 
+    }
+    .poster-five { 
+        grid-area: poster5; 
+    }
+    .poster-six { 
+        grid-area: poster6; 
+    }
+
+    /*poster one text and button special adjustment to align according to the wireframe*/
+    .poster-one .bot{
+        display: flex;
+        flex-direction: column;
     }
 }
 
+/*Phone media query*/
 @media screen and (max-width: 360px) {
-
-    .header {
-        padding: var(--small-spacing);
+    /*header, navigation bar and button*/
+    header {
+        font-size: 0.5rem;
     }
-    .navbar {
+    nav {
         display: none;
     }
 
-    main {
-        display: block;
-        width: 100%;
+    header button {
+        padding: 0.75rem 0.125rem;
     }
 
-    .main-poster-cont {
-        
+    /*main */
+    main { /*grid display for all containers to be lined in a column*/
+        display: grid;  
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+
+        "poster1"
+        "poster2"
+        "poster3"
+        "poster4"
+        "poster5"
+        "poster6";
+
+        justify-items: center;
+        margin: 0 auto;
     }
 
-    .poster-one {
-        display: flex;
-        flex-direction: column;
-        max-width: 100%;   
-    }
-
-    .poster-two {    
-        max-width: 150%;
-    }
-    .poster-three {
-        max-width: 100%;
-    }
-
-    .poster-four {
-        max-width: 100%;
-    }
-
-    .poster-five {
-        max-width: 100%;
-    }
-
-    .poster-six {
-        max-width: 100%;
-    }
-
-    .one-bot {
-        display: flex;
-        flex-direction: column;
-        padding: 2rem auto;
-    }
-
-    .one-button {
-        width: inherit;
-    }
-
-    .poster-column {
-        width: 100%; 
-        height: 50%;
-        margin-bottom: 1rem; 
+    .poster-cont-main { /*all container adjustment*/
+        box-shadow: 0.5rem 0.5rem 0.5rem var(--shadow);
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        gap: 3rem;
-    }
-
-    .poster-column img {
-        width: 100%; 
-        height: auto; 
-        object-fit: cover; 
-        max-height: 100rem; 
-    }
-
-    .one-text, .two-text, .three-text, .four-text, .five-text, .six-text {
-        font-size: 1em;
-    }
-
-    .one-button, .two-button, .three-button, .four-button, .five-button, .six-button {
-        text-align: center;
-        font-size: 0.5em;
-    }
-
-    .one-button a button, .two-button a button, .three-button a button, .four-button a button, .five-button a button, .six-button a button { 
-        padding: 0.5rem auto;
         width: 100%;
-        font-family: "Teko", sans-serif;
     }
+
+    .poster-cont-main img { /*all container image adjustment*/
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .poster-cont-main div { /*all container display adjustment to apply all*/
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1;
+    }
+
+    .poster-cont-main p { /*container text adjustment*/
+        text-align: left;
+        font-size: var(--movie-cont-font);
+    }
+
+    /*individual poster grid assignment*/
+    .poster-one { 
+        grid-area: poster1; 
+    }
+
+    .poster-two { 
+        grid-area: poster2; 
+    }
+
+    .poster-three { 
+        grid-area: poster3; 
+    }
+    .poster-four { 
+        grid-area: poster4; 
+    }
+    .poster-five { 
+        grid-area: poster5; 
+    }
+    .poster-six { 
+        grid-area: poster6; 
+    }
+
 }
